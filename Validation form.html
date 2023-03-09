@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Contact Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://parsleyjs.org/dist/parsley.min.js"></script>
+    <script src="validation form.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>Contact Form</h1>
+        </div>
+        <b>
+            <form class="form" id="myform" action="database.php"method="post" enctype="multipart/form-data" >
+                        <div class="form-control">
+                        <label for="name">Name :</label>
+                        <input type="text" id="name" placeholder="Your Name" name="name" data-parsley-required="true"  minlength="3" maxlength="100" data-parsley-trigger="keyup" data-parsley-pattern="/^[a-zA-Z ]{2,30}$/" data-parsley-error-message="User name is required"/>
+                        <div class="validation-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <label for="number"> Phone Number :</label>
+                        <input data-parsley-type="number" id="number" name="number" placeholder="Your Number" minlength="10" maxlength="10" data-parsley-required="true"  data-parsley-trigger="keyup" data-parsley-error-message="Phone number is required"/>
+                        <div class="validation-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <label for="date"> Date Of Birth (DOB) :</label>
+                        <input type="date" id="date" name="date"  required="true" data-parsley-trigger="keyup" data-parsley-error-message="Date Of Birth is required"/>
+                        
+                    </div>
+                    <div class="form-control">
+                        <label for="email">E-mail :</label>
+                        <input type="email" id="email" name="email" placeholder="eg:abc@gmail.com"  data-parsley-required="true" data-parsley-trigger="keyup" data-parsley-pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" data-parsley-error-message="Email is required"  />
+                        <div class="validation-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <label for="address"> Address :</label><br>
+                        <textarea id="address" name="address" data-parsley-required="true"  rows="3" cols="70" minlength="6" maxlength="100" data-parsley-trigger="keyup" data-parsley-error-message="Your address is required"></textarea>
+                        <div class="validation-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <label for="website"> Website :</label>
+                        <input type="url" id="website" name="website" data-parsley-required="true" data-parsley-trigger="keyup" data-parsley-error-message="Your Website is required "/>
+                        <div class="validation-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                        <div class="form-control"><b>
+                        <fieldset style="border: 10px double black;">
+                            <legend style="border: 2px solid rgb(12, 98, 109);"><b>Marks</b></legend>
+                            <label for="maths">Maths :</label>
+                            <input type="number" id="maths" name="maths" data-parsley-required="true"  data-parsley-error-message="Math mark is required"/>
+                            <label for="physics">Physics :</label>
+                            <input type="number" id="physics" name="physics" data-parsley-required="true" data-parsley-error-message="Phyics mark is required" />
+                        <label for="chemistry">chemistry :</label>
+                        <input type="number" id="chemistry" name="chemistry" data-parsley-required="true" data-parsley-error-message="Chemistry is required">
+                    </fieldset><br>
+                    <input type="file" name="image" id="image"  required="true" data-parsley-error-message="Upload your image">
+                        </b></div>
+                    <button type="submit" value="submit">Submit</button>
+                </form>
+            </b>
+</div>  
+</body>
+</html>
